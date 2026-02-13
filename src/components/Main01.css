@@ -1,0 +1,118 @@
+.main01-viewport {
+  width: 100%;
+  background-color: #1A1A1A; 
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  width: 1440px;
+  height: 1024px;
+  background-color: transparent;
+  margin: 0 auto;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 헤더 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 45px;
+}
+
+.logo {
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.nav-menu a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.nav-menu a.active, .nav-menu a:hover {
+  color: #F1E5AC;
+}
+
+/* 중앙 비주얼 섹션 */
+.visual-section {
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.red-bar {
+  width: 100vw;        
+  height: 100px;
+  background-color: #A30000;
+  position: absolute;   
+  left: 50%;            
+  transform: translateX(-50%); 
+  z-index: 1;
+  top: 365px;
+}
+
+
+.trophy-wrapper {
+  z-index: 2;
+  margin-bottom: -40px;
+}
+
+.trophy-img {
+  width: 350px;
+  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
+}
+
+/* 하단 텍스트 섹션 */
+.footer-content {
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 80px;
+}
+
+.korean-name {
+  font-size: 50px;
+  letter-spacing: 13px;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+
+.english-name {
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 12px;
+  margin-bottom: 30px;
+}
+
+.portfolio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-label .line {
+  width: 120px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.portfolio-label .text {
+  font-size: 25px;
+  letter-spacing: 8px;
+  font-weight: 800;
+}
