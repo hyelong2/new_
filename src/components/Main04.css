@@ -103,7 +103,7 @@
   height: auto; 
   padding: 40px 30px 30px 30px;
   border-radius: 20px;
-  border: 2px solid var(--gold-color);
+  border: 3px solid var(--gold-color);
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -115,7 +115,7 @@
   background: none;
   border: none;
   font-size: 32px;
-  color: #888;
+  color: #555555;
   cursor: pointer;
   line-height: 1;
 }
@@ -126,50 +126,71 @@
 
 .modal-header h3 {
   margin: 0 0 15px 0;
-  color: #666;
+  color: #1a1a1a;
   font-size: 1.6rem;
 }
 
 .admin-msg {
-  color: #777;
+  color: #555;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 10px;
 }
 
 /* 입력칸 */
-.modal-body textarea {
-  width: 100%;
-  height: 160px; 
-  margin: 10px 0; 
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 1rem;
-  resize: none;
+.name-input,
+.email-input,
+.message-input {
+  width: 100%;          
+  background-color: #fff;  
+  border: 2px solid #eee;  
+  border-radius: 15px;  
+  padding: 5px;
+  margin-bottom: 5px; 
+  font-size: 13px;
   box-sizing: border-box;
+  appearance: none;      
+  outline: none;       
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); 
+}
+
+.message-input {
+  height: 200px;
+  resize: none;
+}
+
+.name-input:focus,
+.email-input:focus,
+.message-input:focus {
+  border-color: var(--gold-color);
 }
 
 /* 모달 내 Send 버튼 */
 .send-btn {
   width: 100%;
-  background-color: var(--dark-color);
+  background-color: #555555; 
   color: var(--white);
-  padding: 15px;
-  border-radius: 10px;
+  padding: 18px;          
+  border-radius: 15px;     
   border: none;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;        
   cursor: pointer;
-  transition: background 0.2s;
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 .send-btn:hover {
-  background-color: var(--gold-color); 
-  color: var(--white-color);            
-  font-weight: 700;                    
-  transition: all 0.3s ease;           
+  background-color: #F1E5AC;  
+  transform: translateY(-2px); 
+}
+
+/* 모달 내부 텍스트 정렬 */
+.admin-msg {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 15px;    
+  text-align: left;
 }
 
 /* --- 반응형 --- */
