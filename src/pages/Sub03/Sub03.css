@@ -1,0 +1,22 @@
+@import url('https://hangeul.naver.com/font/nanum-square-neo');
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+:root {
+  --bg-ivory: #F5F5DC;
+  --black: #2C2924;
+  --gray: #726D64;
+  --green: #4A6741;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'NanumSquare Neo', sans-serif;
+  background-color: var(--bg-ivory);
+  color: var(--black);
+  min-width: 1905px; 
+}
