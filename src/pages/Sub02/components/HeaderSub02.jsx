@@ -1,10 +1,41 @@
 import React, { useState } from 'react';
 import './HeaderFooter02.css'; 
 
-const HeaderSub02 = ({ tabs, activeTab, handleTabClick, categories, activeMenu, setActiveMenu, setActiveTab }) => {
+const HeaderSub02 = ({ sectionRefs, onNavigate }) => {
   const [isCheckHovered, setIsCheckHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loginData, setLoginData] = useState({ id: '', pw: '' });
+
+  const [activeTab, setActiveTab] = useState(null);
+  const [activeMenu, setActiveMenu] = useState(null);
+
+  const tabs = ['HOT', '지역별', '연령별'];
+  const categories = ['뮤지컬', '연극', '전시/행사', '클래식/무용', '스포츠'];
+
+  // 탭 클릭 시 스크롤 로직
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+    setActiveMenu(null);
+    if (sectionRefs && sectionRefs[index] && sectionRefs[index].current) {
+      sectionRefs[index].current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  };
+
+  // 카테고리 클릭 시 페이지 이동 로직 수정
+  const handleCategoryClick = (cat, idx) => {
+    setActiveMenu(idx);
+    setActiveTab(null);
+    
+    if (cat === '뮤지컬') {
+      // 주소창을 이동시키는 대신, 부모의 state를 2로 바꿉니다.
+      if (onNavigate) {
+        onNavigate(2);
+      }
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,26 +52,24 @@ const HeaderSub02 = ({ tabs, activeTab, handleTabClick, categories, activeMenu, 
 
   return (
     <header className="sub2-header">
-      {/* 1층: 로고 및 유저 메뉴 */}
       <div className="header-row-top">
         <div className="header-inner">
-          <div className="logo-area">
+          {/* 로고 클릭 시 1페이지(Sub02_1)로 이동 */}
+          <div className="logo-area" onClick={() => onNavigate && onNavigate(1)} style={{cursor:'pointer'}}>
             <h1 className="logo-text">CURTAIN CALL</h1>
             <span className="logo-sub">예매</span>
           </div>
           <div className="user-menu">
-            <a href="/login">로그인</a>
+            <a href="#login" onClick={(e) => e.preventDefault()}>로그인</a>
             <span className="divider">|</span>
-            <a href="/my">MY</a>
+            <a href="#my" onClick={(e) => e.preventDefault()}>MY</a>
             <span className="divider">|</span>
-            
             <div 
               className="sub2-check-wrapper"
               onMouseEnter={() => setIsCheckHovered(true)}
               onMouseLeave={() => setIsCheckHovered(false)}
             >
               <span className="sub2-menu-link">예매확인</span>
-              
               <div className={`sub2-dropdown-box ${isCheckHovered ? 'show' : ''}`}>
                 <div className="sub2-dropdown-inner">
                   <div className="sub2-dropdown-item">
@@ -58,36 +87,27 @@ const HeaderSub02 = ({ tabs, activeTab, handleTabClick, categories, activeMenu, 
         </div>
       </div>
 
-      {/* 2층: 탭 + 카테고리 + 검색창 */}
       <div className="header-row-bottom">
         <div className="header-inner">
           <nav className="nav-combined">
-            {/* 랭킹 탭 (이제 기본 검정색) */}
             <div className="nav-group tabs">
               {tabs.map((tab, idx) => (
                 <button
                   key={`tab-${idx}`}
                   className={`nav-item tab-item ${activeTab === idx ? 'active' : ''}`}
-                  onClick={() => {
-                    handleTabClick(idx);
-                    setActiveMenu(null);
-                  }}
+                  onClick={() => handleTabClick(idx)}
                 >
                   {tab}
                 </button>
               ))}
             </div>
 
-            {/* 카테고리 (뮤지컬, 연극...) */}
             <div className="nav-group categories">
               {categories.map((cat, idx) => (
                 <button
                   key={`cat-${idx}`}
                   className={`nav-item cat-item ${activeMenu === idx ? 'active' : ''}`}
-                  onClick={() => {
-                    setActiveMenu(idx);
-                    setActiveTab(null);
-                  }}
+                  onClick={() => handleCategoryClick(cat, idx)}
                 >
                   {cat}
                 </button>
@@ -95,7 +115,6 @@ const HeaderSub02 = ({ tabs, activeTab, handleTabClick, categories, activeMenu, 
             </div>
           </nav>
 
-          {/* 검색창 영역 */}
           <div className="search-area">
             <div className="search-input-wrapper">
               <input type="text" placeholder="검색어를 입력하세요" className="search-input" />
@@ -105,7 +124,6 @@ const HeaderSub02 = ({ tabs, activeTab, handleTabClick, categories, activeMenu, 
         </div>
       </div>
 
-      {/* 로그인 모달 */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

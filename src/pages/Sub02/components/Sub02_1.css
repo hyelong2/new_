@@ -1,8 +1,22 @@
-/* --- 메인 컨테이너 및 레이아웃 --- */
+/* --- Sub02_1.css --- */
+
+/* --- 공통 변수 --- */
+:root {
+  --purple: #8B5CF6;
+  --black: #333333;
+  --gray: #888888;
+  --light-gray: #eeeeee;
+  --white: #ffffff;
+  --line: #e5e5e5;
+  --bg-color: #F9F9FB;
+}
+
+/* --- 메인 컨테이너 --- */
 .sub02-container {
   width: 1905px;
   margin: 0 auto;
-  background-color: #F9F9FB;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .main-content {
@@ -12,124 +26,143 @@
 /* --- 상단 배너 영역 --- */
 .banner-area {
   width: 100%;
-  height: 500px;
-  background-color: #8B5CF6; /* 메인 퍼플 컬러 */
+  height: 600px;
+  background: linear-gradient(135deg, var(--purple) 0%, #6d28d9 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 100px;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-top: 160px; /* 헤더 높이만큼 여백 */
+  margin-bottom: 80px;
 }
 
 /* --- 스크롤 유도 섹션 --- */
 .scroll-info {
   text-align: center;
-  padding: 10px 0;
+  padding: 20px 0;
   color: var(--gray);
+  font-weight: 600;
 }
 
 .arrow {
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 200px;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 150px;
+  animation: bounce 2s infinite;
 }
 
-/* --- 랭킹 섹션 (HOT, 지역별, 연령별) --- */
-.ranking-container {
-  padding: 20px 200px 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  margin-bottom: 200px;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
 }
 
-.ranking-section {
-  scroll-margin-top: 50px; /* 탭 클릭 시 스크롤 위치 보정 */
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 35px;
+/* --- 섹션 공통 스타일 --- */
+.ranking-section, .location-section, .theater-section {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 150px auto;
+  padding: 0 50px;
 }
 
 .section-title {
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: var(--black);
-  margin: 0;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
 }
 
-.view-more {
-  background: none;
-  border: none;
-  color: var(--gray);
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 15px;
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background-color: var(--purple);
 }
 
-/* --- 카드 그리드 레이아웃 --- */
-.item-grid {
+/* --- HOT 랭킹 그리드 --- */
+.ranking-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 30px;
 }
 
-.image-box {
-  aspect-ratio: 3.5 / 4.5;
-  background-color: #f0f0f0;
-  /* 포스터 대용 패턴 배경 */
-  background-image:
-    linear-gradient(45deg, #e5e5e5 25%, transparent 25%),
-    linear-gradient(-45deg, #e5e5e5 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #e5e5e5 75%),
-    linear-gradient(-45deg, transparent 75%, #e5e5e5 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  border-radius: 4px;
-  display: flex;
-  align-items: flex-end;
-  padding: 25px;
+.ranking-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
 
-.image-box:hover {
+.ranking-card:hover {
   transform: translateY(-10px);
 }
 
-.rank-number {
-  font-size: 80px;
-  font-weight: 900;
-  color: var(--purple);
-  line-height: 0.8;
+.poster {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: #ddd;
 }
 
-/* --- 공연장(Theater) 섹션 --- */
-.theater-section {
-  padding: 100px 200px;
-  background-color: #F9F9FB;
+.ranking-card p {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
 }
 
+/* --- 지역별 TOP --- */
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.location-card {
+  height: 120px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.location-card:hover {
+  background-color: var(--purple);
+  color: white;
+  border-color: var(--purple);
+}
+
+/* --- 공연장 안내 섹션 --- */
 .theater-tabs {
   display: flex;
-  gap: 12px;
-  margin-bottom: 30px;
-  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
 .theater-tab-btn {
-  padding: 8px 20px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 1px solid var(--line);
   background: white;
   color: var(--gray);
   cursor: pointer;
-  font-size: 15px;
-  transition: all 0.2s ease;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .theater-tab-btn:hover, 
@@ -137,82 +170,75 @@
   background-color: var(--purple);
   color: white;
   border-color: var(--purple);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
 }
 
-/* 지도 및 정보 레이아웃 */
 .theater-content {
   display: flex;
-  gap: 60px;
-  margin-bottom: 200px;
+  gap: 50px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .map-area {
   flex: 1.2;
-  height: 480px;
-  border-radius: 12px;
+  height: 500px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  background-color: #eee;
 }
 
 .theater-info {
   flex: 1;
-  color: var(--black);
+  display: flex;
+  flex-direction: column;
 }
 
 .theater-info h3 {
-  font-size: 30px;
-  margin: 0 0 15px 0;
-}
-
-.theater-info .url, 
-.theater-info .address {
-  font-size: 17px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-bottom: 20px;
   color: var(--black);
 }
 
+.theater-info .url { color: var(--purple); margin-bottom: 5px; font-weight: 600; }
+.theater-info .address { color: var(--gray); margin-bottom: 30px; }
+
 .theater-logo-small {
-  margin: 25px 0;
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #ccc;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
-/* 미니 포스터 리스트 */
+/* 미니 포스터 그리드 */
 .mini-poster-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .mini-poster-card {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
 .mini-img {
-  width: 85px;
-  height: 110px;
-  background: #eee;
-  border-radius: 4px;
+  width: 70px;
+  height: 90px;
+  background-color: #eee;
+  border-radius: 5px;
   flex-shrink: 0;
 }
 
 .mini-txt {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 4px;
 }
 
-.m-title { 
-  font-weight: bold; 
-  font-size: 14px; 
-  margin-bottom: 4px; 
-  color: var(--black); 
-}
-
-.m-date, 
-.m-info { 
-  font-size: 12px; 
-  color: var(--gray); 
-  line-height: 1.4; 
-}
+.m-title { font-weight: 700; font-size: 15px; color: var(--black); }
+.m-date, .m-info { font-size: 13px; color: var(--gray); }
