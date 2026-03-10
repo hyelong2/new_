@@ -1,0 +1,194 @@
+@import url('../Sub03.css');
+
+/* Header */
+.s3-common-header {
+  width: 100%;
+  height: 160px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.s3-header-inner {
+  width: 1500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.s3-logo {
+  font-size: 45px;
+  font-weight: 800;
+  color: var(--green);
+  text-align: center;
+  cursor: pointer;
+}
+
+.s3-logo span {
+  display: block;
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 400;
+  margin-top: -5px;
+}
+
+.s3-user-nav {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  display: flex;
+  gap: 20px;
+  color: var(--gray);
+}
+
+.s3-user-nav span {
+  cursor: pointer;
+}
+
+/* Footer 공통 스타일 수정 */
+.s3-common-footer {
+  width: 100%;
+  background-color: rgba(74, 103, 65, 0.7);
+  padding: 50px 0;
+  color: var(--gray);
+}
+
+.s3-footer-inner {
+  max-width: 1905px;
+  margin: 0 auto;
+  padding: 0 200px;
+}
+
+/* 상단 로고 및 메뉴 */
+.s3-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.s3-footer-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color:var(--bg-ivory);
+  line-height: 1;
+}
+
+.s3-logo-sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--bg-ivory);
+  margin-top: 5px;
+}
+
+.s3-footer-links {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.s3-footer-links a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.s3-footer-links .bold {
+  font-weight: 700;
+}
+
+/* 중간 정보 영역 */
+.s3-footer-mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.s3-biz-details {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--black);
+}
+
+.biz-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.divider {
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 2px;
+}
+
+.link-btn {
+  text-decoration: underline;
+  margin-left: 5px;
+  color: var(--black);
+}
+
+/* SNS 아이콘 */
+.s3-sns {
+  display: flex;
+  gap: 8px;
+}
+
+.s3-sns-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px; /* 이미지처럼 약간 둥근 사각형 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.s3-sns-icon.naver { background: #03C75A; font-weight: bold; font-size: 14px; }
+.s3-sns-icon.fb { background: #1877F2; }
+.s3-sns-icon.tw { background: #000; }
+.s3-sns-icon.kakao { background: #FEE500; color: #3C1E1E; }
+.s3-sns-icon.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+/* 하단 면책 및 카피라이트 */
+.s3-footer-bottom {
+  border-top: 1px solid var(--green);
+  padding-top: 20px;
+  position: relative;
+  font-weight: 300;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: var(--green);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 12px;
+  color: var(--green);
+}
+
+.logout-btn {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--bg-ivory);
+  font-size: 15px;
+}

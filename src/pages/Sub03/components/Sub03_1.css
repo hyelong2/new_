@@ -1,0 +1,308 @@
+@import url('../Sub03.css');
+
+.sub3-container {
+  width: 1905px;
+  margin: 0 auto;
+  font-family: 'NanumSquare Neo', sans-serif;
+  background-color: var(--bg-ivory);
+  color: var(--black);
+}
+
+/* MAIN AREA */
+.sub3-main {
+  padding-bottom: 100px;
+}
+
+.sub3-search-nav-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.sub3-search-box {
+  position: relative;
+  width: 550px;
+  margin-bottom: 35px;
+}
+
+.sub3-search-box input {
+  width: 100%;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 1px solid var(--gray);
+  background: var(--white);
+  outline: none;
+}
+
+.sub3-search-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--green);
+}
+
+.sub3-nav {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.sub3-nav-item {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.sub3-nav-item:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.sub3-filter-row {
+  display: flex;
+  gap: 15px;
+  font-size: 15px;
+  color: var(--gray);
+}
+
+/* SHELF SLIDER */
+.sub3-content-shelf {
+  width: 1500px;
+  margin: 0 auto 100px;
+}
+
+.sub3-shelf-name {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: var(--black);
+}
+
+.sub3-shelf-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sub3-shelf-viewport {
+  width: 1380px;
+  overflow: hidden;
+}
+
+.sub3-shelf-track {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.sub3-card-item {
+  flex-shrink: 0;
+  width: 440px;
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.sub3-card-visual {
+  height: 250px;
+  background: #eee;
+  position: relative;
+}
+
+.sub3-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sub3-no-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #999;
+  font-size: 14px;
+}
+
+.sub3-card-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 15px;
+  background: var(--green);
+  color: var(--white);
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 4px;
+}
+
+.sub3-card-details {
+  padding: 20px;
+}
+
+.sub3-card-details h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.sub3-card-tags {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.sub3-card-meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  font-size: 15px;
+}
+
+.sub3-card-price {
+  font-weight: 700;
+}
+
+.sub3-shelf-arrow {
+  font-size: 45px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* REVIEWS */
+.sub3-review-section {
+  width: 1500px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.sub3-review-top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.sub3-review-top-info h2 {
+  font-size: 32px;
+  color: var(--black);
+}
+
+.sub3-more-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.sub3-review-main-content {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.sub3-review-left-box {
+  width: 600px;
+}
+
+.sub3-review-img-placeholder {
+  width: 100%;
+  height: 350px;
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.sub3-review-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 후기 섹션용 이미지 준비중 스타일 추가 */
+.sub3-review-img-placeholder .sub3-no-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #999;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sub3-review-desc-area {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sub3-review-main-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.sub3-review-main-desc {
+  font-size: 17px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.sub3-review-right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 435px;
+}
+
+.sub3-review-tab-item {
+  display: flex;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--gray);
+  cursor: pointer;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+.sub3-review-tab-item.active,
+.sub3-review-tab-item:hover {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+.sub3-tab-index {
+  font-size: 22px;
+  margin-right: 50px;
+  font-weight: 500;
+}
+
+.sub3-tab-label {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sub3-review-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.sub3-nav-arrow {
+  font-size: 18px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.sub3-nav-arrow:hover {
+  color: var(--green);
+}
