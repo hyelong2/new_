@@ -6,7 +6,7 @@ const Sub01_2 = ({ onNavigate }) => {
     <div className="main-page-02">
       <header className="header">
         <div className="header-left">
-          <img src="/img/logo.png" alt="SCENE ONE Logo" className="logo-img" />
+          <img src="/Sub01img/logo.png" alt="SCENE ONE Logo" className="logo-img" />
           <span className="brand-text">Entertainment Company</span>
         </div>
         <nav className="header-right">

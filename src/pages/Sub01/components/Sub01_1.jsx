@@ -1,15 +1,12 @@
 import React from 'react';
 import './Sub01_1.css';
 
-import logoImg from '../Sub01img/logo.png';
-import mainHeroImg from '../Sub01img/main.png';
-
 const Sub01_1 = ({ onNavigate }) => {
   return (
     <div className="main-page">
       <header className="header">
         <div className="header-left">
-          <img src={logoImg} alt="SCENE ONE Logo" className="logo-img" />
+          <img src="/Sub01img/logo.png" alt="SCENE ONE Logo" className="logo-img" />
           <span className="brand-text">Entertainment</span>
         </div>
         <nav className="header-right">
@@ -24,7 +21,7 @@ const Sub01_1 = ({ onNavigate }) => {
           <span className="rotated-text">The First Scene, The Best Actor</span>
         </div>
         <div className="hero-img-box">
-          <img src={mainHeroImg} alt="Main Artist" className="main-hero-img" />
+          <img src="./Sub01img/main.png" alt="Main Artist" className="main-hero-img" />
         </div>
       </section>
     </div>
