@@ -1,0 +1,155 @@
+/* Header Specific Styles */
+.sub01-header-container {
+  width: 100%;
+  max-width: 1905px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #F8F9FA;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EEDCC8; /* 경계선 추가 (선택사항) */
+}
+
+.sub01-header-inner {
+  width: 100%;
+  padding: 0 50px; /* 양옆 여유 공간 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub01-logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.sub01-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 20px;
+}
+
+.sub01-logo-img {
+  width: 335px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.sub01-logo-text {
+  font-family: 'MaruBuri', serif;
+  font-weight: 800; /* Bold */
+  font-size: 40px;
+  color: #8D5B44;
+}
+
+.sub01-menu-list {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.sub01-menu-item {
+  font-family: 'MaruBuri', serif;
+  font-weight: 600; /* Semi-Bold */
+  font-size: 25px;
+  color: #212529;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sub01-menu-item:hover {
+  color: #C28B72; /* 호버 시 포인트 컬러 */
+}
+
+/* Footer Styles */
+.sub01-footer-container {
+  width: 100%;
+  max-width: 1905px;
+  height: 220px;
+  margin: 0 auto;
+  background-color: #EEDCC8; /* 이미지의 배경색상 반영 */
+  padding: 30px 0 20px 0;
+  box-sizing: border-box;
+}
+
+.sub01-footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.sub01-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub01-footer-logo-area {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.sub01-footer-logo-img {
+  width: 224px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.sub01-footer-logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #8D5B44;
+}
+
+.sub01-footer-sns {
+  display: flex;
+  gap: 20px;
+}
+
+.sub01-footer-sns a {
+  color: #8D5B44;
+  font-size: 22px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub01-sns-naver {
+  font-weight: 900;
+  font-family: 'Arial', sans-serif;
+}
+
+.sub01-footer-info {
+  margin-top: 10px;
+}
+
+.sub01-footer-info p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #8D5B44;
+  line-height: 1.4;
+}
+
+.sub01-info-title {
+  font-weight: 700;
+  margin-bottom: 5px !important;
+}
+
+.sub01-footer-bottom {
+  border-top: 1px solid rgba(141, 91, 68, 0.2);
+  padding-top: 10px;
+}
+
+.sub01-footer-bottom p {
+  font-size: 12px;
+  color: #8D5B44;
+  opacity: 0.8;
+}

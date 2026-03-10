@@ -1,0 +1,20 @@
+/* 전역 설정 및 폰트 정의 */
+@import url('https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F8F9FA;
+  font-family: 'MaruBuri', serif;
+  color: #212529;
+}
+
+.sub01-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 텍스트 컬러 유틸리티 */
+.sub01-text-primary { color: #8D5B44; }
+.sub01-text-secondary { color: #666666; }
+.sub01-bg-point { background-color: #EEDCC8; }
