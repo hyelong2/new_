@@ -7,12 +7,12 @@
   background-color: #F8F9FA;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #EEDCC8; /* 경계선 추가 (선택사항) */
+  border-bottom: 1px solid #666; 
 }
 
 .sub01-header-inner {
   width: 100%;
-  padding: 0 50px; /* 양옆 여유 공간 */
+  padding: 10px 20px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +38,7 @@
 
 .sub01-logo-text {
   font-family: 'MaruBuri', serif;
-  font-weight: 800; /* Bold */
+  font-weight: 800;
   font-size: 40px;
   color: #8D5B44;
 }
@@ -52,16 +52,19 @@
 }
 
 .sub01-menu-item {
-  font-family: 'MaruBuri', serif;
-  font-weight: 600; /* Semi-Bold */
+  font-weight: 600;
   font-size: 25px;
-  color: #212529;
+  color: #666;
   text-decoration: none;
+  background: none; 
+  border: none;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .sub01-menu-item:hover {
-  color: #C28B72; /* 호버 시 포인트 컬러 */
+  color: #C28B72;
+  text-decoration: underline;
 }
 
 /* Footer Styles */
@@ -70,7 +73,7 @@
   max-width: 1905px;
   height: 220px;
   margin: 0 auto;
-  background-color: #EEDCC8; /* 이미지의 배경색상 반영 */
+  background-color: #EEDCC8;
   padding: 30px 0 20px 0;
   box-sizing: border-box;
 }

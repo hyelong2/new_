@@ -51,7 +51,7 @@ const Sub01_3 = ({ onNavigate }) => {
           <section key={artist.id} id={artist.id} className="artist-detail-section">
             <div className="artist-top-row">
               <h2 className="artist-name-title">{artist.name}</h2>
-              <div className="artist-main-img-wrap">
+              <div className="artist-main-img-wrap"><img src="/Sub01img/artist1.png" alt="" />
                 <div className="artist-large-img"></div>
               </div>
             </div>
